@@ -1,6 +1,7 @@
 const { DataTypes, Model } = require('sequelize');
 const { v4: uuidv4 } = require('uuid');
 const sequelize = require('../database/DB.js');
+const Project = require('./Project');
 
 class User extends Model {}
 
@@ -28,7 +29,9 @@ User.init({
   sequelize, // We need to pass the connection instance
   modelName: 'User' // We need to choose the model name
 });
- 
+
+User.hasMany(Project, {foreignKey: 'userId', as: 'Projects'});
+Project.belongsTo(User, {foreignKey: 'userId', as: 'User'});
 
 /* // the defined model is the class itself
 console.log(User === sequelize.models.User); // true */
