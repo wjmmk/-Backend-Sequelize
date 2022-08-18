@@ -1,6 +1,6 @@
 databaseMysql = {
     username: 'root',
-    password: '9783238',
+    password: process.env.POSTGRESS_PASSWORD,
     database: 'postgres',
 }
 databasePostgress = {
