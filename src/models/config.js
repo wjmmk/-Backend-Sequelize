@@ -10,15 +10,3 @@ databasePostgress = {
 }
 
 module.exports = { databaseMysql, databasePostgress }; 
-
-// Esta es otra forma de hacerlo
-/* module.exports = {
-
-    database: {
-        username: "root",
-        password: "9783238",
-        database: "sequelize_test",
-        host: "localhost"
-    }
-
-} */
